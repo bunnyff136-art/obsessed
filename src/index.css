@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --ivory:#f1e6d3; --blush:#f4c6d0; --crimson:#b3202e; --aqua:#bfe3ea; --mist:#d9eef2; --ink:#4a2b30; }
+html, body { margin:0; overflow-x:hidden; background:var(--ivory); color:var(--ink); font-family:"Cormorant Garamond",Georgia,serif; -webkit-tap-highlight-color:transparent; }
+.sea { background:linear-gradient(180deg,#bfe3ea 0%,#cdeaf0 25%,#e3f2f4 55%,#cfe6ee 80%,#f1e6d3 100%); }
+.paper { background-image:radial-gradient(rgba(120,80,40,.06) 1px,transparent 1px); background-size:5px 5px; }
+.pearl { background:radial-gradient(circle at 30% 28%,#fff 0,#f6e9ef 28%,#cdbfd8 62%,#9fb2d4 100%); box-shadow:inset -4px -6px 10px rgba(80,90,140,.25),0 8px 20px rgba(60,100,130,.18); border-radius:9999px; }
+.petal { position:absolute; top:-8vh; border-radius:100% 0 100% 0; will-change:transform; animation:fall linear infinite; }
+@keyframes fall { 0% { transform:translate3d(0,0,0) rotate(0); } 100% { transform:translate3d(var(--dx),112vh,0) rotate(540deg); } }
+.heart { animation:beat 1.6s ease-in-out infinite; }
+@keyframes beat { 0%,100% { transform:scale(1); } 50% { transform:scale(1.18); } }
+:focus-visible { outline:2px solid var(--crimson); outline-offset:3px; }
+@media (prefers-reduced-motion: reduce) { .petal, .heart { animation:none; } .rose { display:none; } html { scroll-behavior:auto; } }
+.fpetal { position:absolute; top:-8vh; border-radius:100% 0 100% 0; will-change:transform; animation:fall linear infinite; }
+
