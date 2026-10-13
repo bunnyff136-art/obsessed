@@ -25,7 +25,7 @@ export default function Sea({ children }: { children: React.ReactNode }) {
     ];
   }, []);
   const speeds = [-120, -280, -460, -200];
-  const ref = useScene((root, q) => {
+  const ref = useScene<HTMLDivElement>((root, q) => {
     q(".layer").forEach((el, i) => {
       gsap.to(el, { y: speeds[i], ease: "none", scrollTrigger: { trigger: root, start: "top bottom", end: "bottom top", scrub: true } });
     });
