@@ -18,10 +18,11 @@ function build(root: HTMLElement, q: (s: string) => Element[]) {
     scrollTrigger: {
       trigger: root,
       start: "top top",
-      end: "+=300%",
+      end:  () => `+=${window.innerHeight * 2}`,
       pin: true,
       scrub: 0.5,
       anticipatePin: 1,
+      invalidateOnRefresh: true,
     },
   });
 
